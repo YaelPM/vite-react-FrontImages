@@ -57,7 +57,7 @@ class Home extends React.Component {
 
         console.log(this.state.images)
 
-        fetch('http://localhost:3000/images/post', {
+        fetch('http://54.86.175.108/images/post', {
             method: 'POST',
             body: formdata
         })
@@ -75,15 +75,15 @@ class Home extends React.Component {
             <div>
                 <Header></Header>
                 <div className="home vh-color">
-                    <div className="container ">
+                    <div className="container">
                         <div className="row">
                             <div className="col-lg-2 ">
                             </div>
                             <div className="col-lg-10 resent-color border-start">
-                                <h4 className="h4">Recientes</h4>
+                                <h4 className="h4" color='white'>Recientes</h4>
                                 <div className="image-upload">
                                     <label htmlFor="file-input">
-                                        <img src="/src/assets/icons/computacion-en-la-nube.png" width="100" height="100" className="img-cloud"/>
+                                        <img src="https://th.bing.com/th/id/OIP.cSA3urhjSmO5TEzR0i3BQQHaHZ?pid=ImgDet&rs=1" width="100" height="100" className="img-cloud"/>
                                     </label>
                                     <input id="file-input" type={"file"} multiple className='form-control ' onChange={this.selectedImages.bind(this)}></input>
                                 </div>
@@ -102,44 +102,25 @@ class Home extends React.Component {
                             </div>
                             <div className="col-lg-10 resent-color border-start" >
                                 <div className="image-upload">
-                                    <label htmlFor="update">
-                                        <img src="/src/assets/icons/refresh%20(1).png" width="100" height="100" className="reload"/>
-                                    </label>
-                                    <input type="Button" id="update" onClick={this.getImages.bind(this)} defaultValue={"Subir"}  />
+                                    <img src="https://th.bing.com/th/id/OIP.ZKo9bhGA9Ee5NM_Si47T3wHaHW?pid=ImgDet&rs=1" width="100" height="100" className="reload"/>
+                                    <input type="Button" id="update" onClick={this.getImages.bind(this)} defaultValue={"Update Images"}  />
                                 </div>
                                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-inner">
                                         <For each="item" index="idx" of={this.state.savedImages}>
-                                            {/* <If condition= {idx==0}>
-                                            <div class="carousel-item active">
-                                                <img src={'http://localhost:3000/' + item} width="100" height="100" className="img-size"></img>
-                                            </div>
-                                            </If>
-                                            <div class="carousel-item active">
-                                                <img src={'http://localhost:3000/' + item} width="100" height="100" className="img-size"></img>
-                                            </div> */}
                                             <Choose>
                                                 <When condition={idx==0}>
                                                     <div className="carousel-item active" key={idx}>
-                                                        <img src={'http://localhost:3000/' + item} width="100" height="100" className="img-size"></img>
+                                                        <img src={'http://54.86.175.108/' + item} width="100" height="100" className="img-size"></img>
                                                     </div>
                                                 </When>
                                                 <When condition={idx>0}>
                                                     <div className="carousel-item" key={idx}>
-                                                        <img src={'http://localhost:3000/' + item} width="100" height="100" className="img-size"></img>
+                                                        <img src={'http://54.86.175.108/' + item} width="100" height="100" className="img-size"></img>
                                                     </div>
                                                 </When>
                                             </Choose>
                                         </For>
-                                        {/* <div class="carousel-item active">
-                                        <img src="..." class="d-block w-100" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
-                                        <img src="..." class="d-block w-100" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
-                                        <img src="..." class="d-block w-100" alt="...">
-                                        </div> */}
                                     </div>
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -150,13 +131,6 @@ class Home extends React.Component {
                                         <span class="visually-hidden">Next</span>
                                     </button>
                                 </div>
-                                {/* <div className="overflow-auto" id="over-photos">
-                                    <For each="item" index="idx" of={this.state.savedImages}>
-                                        <div className='container d-flex justify-content-center' key={idx}>
-                                            <img src={'http://localhost:3000/' + item} width="100" height="100" className="img-size"></img>
-                                        </div>
-                                    </For>
-                                </div> */}
                             </div>
                         </div>
                     </div>
