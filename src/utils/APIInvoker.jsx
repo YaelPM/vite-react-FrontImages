@@ -1,7 +1,7 @@
 const configuration = {
     debugMode: false,
     api : {
-        host: 'http://54.86.175.108'
+        host: 'http://44.204.38.112/'
     }
 }
 const debug = configuration.debugMode
